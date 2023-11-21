@@ -1,0 +1,171 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+[hidden] { 
+  display: none; 
+}
+
+body, html {
+  height: 100%;
+}
+
+:root {
+  --gothic: 'UnifrakturCook', cursive;
+  --caudex: 'Caudex', serif;
+  --purple: #4b0e1d85;
+  --pinkWhite: #ffcbe4;
+  --hoverTransition: color 0.4s;
+}
+
+body {
+  background: url("assets/Sanssouci.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+
+header {
+  /* background-color: var(--purple); */
+  height: 100px;
+  position: fixed;
+  width: 100%;
+
+}
+
+h1 {
+  font-size: 82px;
+  font-family: var(--gothic);
+}
+
+h2, h3 {
+  font-size: 52px;
+  font-family: var(--gothic);
+}
+
+h4, h6 {
+  font-size: 26px;
+  font-family: var(--caudex);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--pinkWhite);
+} 
+
+header h3 {
+  color: white;
+  margin: 0 0 0 2rem;
+}
+
+header h3 a {
+  color: white;
+  text-decoration: none;
+  transition: var(--hoverTransition);
+}
+
+header h3 a:hover {
+  color: var(--pinkWhite);
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+header nav {
+  margin: auto 1rem auto auto;
+}
+
+header nav ul {
+  display: none;
+  list-style: none;
+  padding-left: 0;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+header nav ul li {
+  padding: 0 0.7rem;
+  font-family: var(--caudex);
+  font-size: 1.5rem;
+}
+
+header nav ul li a {
+ text-decoration: none;
+ color: white;
+ transition: var(--hoverTransition);
+}
+
+header nav ul li a:hover {
+  color: var(--pinkWhite);
+}
+
+
+.menu-btn {
+  display: block;
+}
+
+.album-main {
+  /* height: calc(100vh - 100px); */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.album-main .text-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.album-main .text-container h1 {
+  font-size: 100px;
+  line-height: 5rem;
+  letter-spacing: 1.6rem;
+}
+
+.album-main .text-container h2 {
+  font-size: 64px;
+  letter-spacing: -2px;
+  line-height: 4rem;
+
+}
+
+
+@media (min-width: 720px) {
+  .menu-btn {
+    display: none;
+  }
+
+  header nav ul {
+    display: flex;
+  }
+}
