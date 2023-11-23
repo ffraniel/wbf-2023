@@ -60,18 +60,21 @@ header {
 }
 
 h1 {
-  font-size: 82px;
+  font-size: 48px;
+  letter-spacing: 1.1rem;
   font-family: var(--gothic);
 }
 
 h2, h3 {
-  font-size: 52px;
   font-family: var(--gothic);
+  /* font-size: 32px */
+  /* font-size: 52px; */
 }
 
 h4, h6 {
-  font-size: 26px;
   font-family: var(--caudex);
+  font-size: 20px;
+  /* font-size: 26px; */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -81,6 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 header h3 {
   color: white;
   margin: 0 0 0 2rem;
+  font-size: 32px;
 }
 
 header h3 a {
@@ -99,38 +103,59 @@ header {
 }
 
 header nav {
-  margin: auto 1rem auto auto;
+  display: block;
+  margin: 0 2rem 0 auto;
 }
 
-header nav ul {
-  display: none;
-  list-style: none;
-  padding-left: 0;
-  justify-content: space-between;
-  align-items: center;
-
-}
-
-header nav ul li {
+header nav button {
+  border: none;
+  background-color: unset;
+  color: white;
   padding: 0 0.7rem;
   font-family: var(--caudex);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  /* font-size: 1.5rem; */
+  transition: --hoverTransition;
 }
 
-header nav ul li a {
- text-decoration: none;
- color: white;
- transition: var(--hoverTransition);
-}
-
-header nav ul li a:hover {
+header nav button:active {
   color: var(--pinkWhite);
 }
 
-
-.menu-btn {
-  display: block;
+header nav ul {
+  list-style: none;
+  padding-left: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  padding: 0 0.7rem;
+  font-family: var(--caudex);
+  font-size: 1.5rem;
+  text-align: center;
+  padding-top: 50px;
 }
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+header nav ul li a:active {
+  color: var(--pinkWhite);
+}
+
+header nav ul .close-menu {
+  font-size: 1.5rem;
+
+}
+
+header nav ul.open{
+  left: 0;
+  z-index: 1;
+  background-color: purple;
+} 
 
 .album-main {
   /* height: calc(100vh - 100px); */
@@ -147,25 +172,104 @@ header nav ul li a:hover {
 }
 
 .album-main .text-container h1 {
-  font-size: 100px;
-  line-height: 5rem;
-  letter-spacing: 1.6rem;
+  line-height: 3rem;
+  font-size: 46px;
+  letter-spacing: 1.1rem; 
+  /* font-size: 100px;
+  letter-spacing: 1.6rem; */
 }
 
 .album-main .text-container h2 {
-  font-size: 64px;
   letter-spacing: -2px;
-  line-height: 4rem;
+  line-height: 3rem;
+  font-size: 46px;
+  /* font-size: 64px; */
+}
 
+@media (min-width: 550px) {
+  header h3 {
+    font-size: 42px;
+  }
+
+  .album-main .text-container h1 {
+      line-height: 4rem;
+      font-size: 70px;
+      letter-spacing: 1.2rem;
+  }
+
+  h4, h6 {
+    font-size: 22px;
+  }
+
+  .album-main .text-container h2 {
+    font-size: 58px;
+    line-height: 3.5rem;
+  }
 }
 
 
 @media (min-width: 720px) {
+  header h3 {
+    font-size: 50px;
+  }
+
   .menu-btn {
     display: none;
   }
 
+  header nav {
+    margin: auto 1rem auto auto;
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+  
+  header nav ul {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 0;
+    position: relative;
+    border: none;
+    left: 0;
+    padding-top: 0;
+  }
+
+  header nav ul.open {
+    background-color: unset;
+    border: none;
+  }
+  
+  header nav ul li {
+    padding: 0 0.7rem;
+    font-family: var(--caudex);
+    font-size: 1.5rem;
+  }
+
+  header nav ul li .close-menu {
+    display: none;
+  }
+  
+  header nav ul li a {
+   text-decoration: none;
+   color: white;
+   transition: var(--hoverTransition);
+  }
+  
+  header nav ul li a:hover {
+    color: var(--pinkWhite);
+  }
+
   header nav ul {
     display: flex;
+  }
+
+  .album-main .text-container h1 {
+  line-height: 5rem;
+  font-size: 82px;
+  }
+
+  .album-main .text-container h2 {
+    line-height: 4rem;
   }
 }
